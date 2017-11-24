@@ -25,8 +25,7 @@
 
         <activity
             android:name=".SecondhandBulletinActivity"
-            android:label="@string/title_activity_secondhand_bulletin"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:label="@string/title_activity_secondhand_bulletin">
         </activity>
 
         <activity

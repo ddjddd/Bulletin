@@ -1,27 +1,18 @@
 package com.jinho.bulletin;
 
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
-
-import java.util.ArrayList;
 
 /*
   Secondhand - products bulletin board Activity
@@ -54,14 +45,9 @@ public class SecondhandBulletinActivity extends AppCompatActivity {
     }
 
     private void showChatList() {
-        // 리스트 어댑터 생성 및 세팅
-     //   final ArrayAdapter<String> adapter
-      //          = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1);
-        CustomListViewAdapter adapter;
+        CustomListViewAdapter adapter =  new CustomListViewAdapter() ;
 
-        adapter = new CustomListViewAdapter() ;
-
-        adapter.addItem("<팜> 라면포트", "$5000~");
+        adapter.addItem("<팜> 라면포트", "$5000~");///////////
 
         sh_articleList.setAdapter(adapter);
 

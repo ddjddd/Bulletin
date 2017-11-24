@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">Bulletin</string>
-    <string name="title_activity_secondhand_bulletin">SecondhandBulletinActivity</string>
+    <string name="title_activity_secondhand_bulletin">중고거래게시판</string>
 </resources>
