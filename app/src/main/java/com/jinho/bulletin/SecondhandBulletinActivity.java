@@ -1,21 +1,27 @@
 package com.jinho.bulletin;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
+
+import java.util.ArrayList;
 
 /*
   Secondhand - products bulletin board Activity
@@ -23,6 +29,7 @@ import com.google.firebase.database.DatabaseError;
 public class SecondhandBulletinActivity extends AppCompatActivity {
 
     private Button sh_bulletin_next;
+    private ListView sh_articleList;
 
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
@@ -30,9 +37,10 @@ public class SecondhandBulletinActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_secondhand_bulletin);
+        setContentView(R.layout.secondhand_bulletin);
 
         sh_bulletin_next = (Button) findViewById(R.id.sh_bulletin_next);
+        sh_articleList = (ListView) findViewById(R.id.sh_articleList);
 
         sh_bulletin_next.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,20 +50,26 @@ public class SecondhandBulletinActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        showChatList();
     }
 
     private void showChatList() {
         // 리스트 어댑터 생성 및 세팅
-        final ArrayAdapter<String> adapter
-                = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1);
-        chat_list.setAdapter(adapter);
+     //   final ArrayAdapter<String> adapter
+      //          = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1);
+        CustomListViewAdapter adapter;
 
-        // 데이터 받아오기 및 어댑터 데이터 추가 및 삭제 등..리스너 관리
-        databaseReference.child("chat").addChildEventListener(new ChildEventListener() {
+        adapter = new CustomListViewAdapter() ;
+
+        adapter.addItem("<팜> 라면포트", "$5000~");
+
+        sh_articleList.setAdapter(adapter);
+
+        databaseReference.child("Article").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Log.e("LOG", "dataSnapshot.getKey() : " + dataSnapshot.getKey());
-                adapter.add(dataSnapshot.getKey());
+           //     adapter.add(dataSnapshot.getKey());
             }
 
             @Override
