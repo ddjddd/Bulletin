@@ -16,7 +16,7 @@ import com.google.firebase.database.DatabaseError;
 /*
   Secondhand - products bulletin board Activity
 */
-public class SecondhandBulletinActivity extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity {
 
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
@@ -24,9 +24,6 @@ public class SecondhandBulletinActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_secondhand_bulletin);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setContentView(R.layout.profile);
     }
-
 }
