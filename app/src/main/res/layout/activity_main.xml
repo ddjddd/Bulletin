@@ -28,7 +28,7 @@
                 android:id="@+id/user_secondhand"
                 android:layout_width="169dp"
                 android:layout_height="wrap_content"
-                android:text="Secondhand"
+                android:text="Next"
                 android:layout_weight="0.01" />
 
         </LinearLayout>
