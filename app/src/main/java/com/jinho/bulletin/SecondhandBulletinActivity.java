@@ -3,7 +3,6 @@ package com.jinho.bulletin;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -19,8 +18,8 @@ import com.google.firebase.database.DataSnapshot;
 */
 public class SecondhandBulletinActivity extends AppCompatActivity {
 
-    private Button sh_bulletin_next;
-    private ListView sh_articleList;
+    private Button sh_bulletin_write;
+    private ListView sh_postList;
 
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
@@ -30,13 +29,12 @@ public class SecondhandBulletinActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.secondhand_bulletin);
 
-        sh_bulletin_next = (Button) findViewById(R.id.sh_bulletin_next);
-        sh_articleList = (ListView) findViewById(R.id.sh_articleList);
+        sh_bulletin_write = (Button) findViewById(R.id.sh_bulletin_next);
+        sh_postList = (ListView) findViewById(R.id.sh_articleList);
 
-        sh_bulletin_next.setOnClickListener(new View.OnClickListener() {
+        sh_bulletin_write.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent intent = new Intent(getApplicationContext(), SecondhandWritingActivity.class);
                 startActivity(intent);
             }
@@ -45,17 +43,17 @@ public class SecondhandBulletinActivity extends AppCompatActivity {
     }
 
     private void showChatList() {
-        CustomListViewAdapter adapter =  new CustomListViewAdapter() ;
+        final CustomListViewAdapter adapter =  new CustomListViewAdapter() ;
 
-        adapter.addItem("<팜> 라면포트", "$5000~");///////////
+        adapter.addItem("<팜> 라면포트", "$5000~");      // example
 
-        sh_articleList.setAdapter(adapter);
+        sh_postList.setAdapter(adapter);
 
         databaseReference.child("Article").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Log.e("LOG", "dataSnapshot.getKey() : " + dataSnapshot.getKey());
-           //     adapter.add(dataSnapshot.getKey());
+                post newPost = dataSnapshot.getValue(post.class);
+                adapter.addItem(newPost.getTitle(), newPost.getDateTime());
             }
 
             @Override
