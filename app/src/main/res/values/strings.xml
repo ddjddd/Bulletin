@@ -1,4 +1,26 @@
 <resources>
     <string name="app_name">Bulletin</string>
     <string name="title_activity_secondhand_bulletin">중고거래게시판</string>
+    <string-array name="category1">
+        <item>가구</item>
+        <item>전자기기</item>
+        <item>책</item>
+    </string-array>
+    <string-array name="furniture">
+        <item>책상</item>
+        <item>책장</item>
+        <item>옷장</item>
+        <item>기타</item>
+    </string-array>
+    <string-array name="eletronicEq">
+        <item>선풍기</item>
+        <item>난방기기</item>
+        <item>스탠드</item>
+        <item>기타</item>
+    </string-array>
+    <string-array name="book">
+        <item>전공서적</item>
+        <item>문학서적</item>
+        <item>만화책</item>
+    </string-array>
 </resources>
