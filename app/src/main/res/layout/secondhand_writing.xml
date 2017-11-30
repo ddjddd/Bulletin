@@ -121,8 +121,15 @@
             android:text="상세설명"/>
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:id="@+id/editMemo"/>
     </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="완료"
+        android:id="@+id/buttonFinish"/>
 
            <!-- <Button
                 android:id="@+id/sh_writing_next"
