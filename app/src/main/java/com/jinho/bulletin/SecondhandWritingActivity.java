@@ -78,7 +78,7 @@ public class SecondhandWritingActivity extends AppCompatActivity {
                 }
                 else if(adspin1.getItem(position).equals("전자기기")){
                     category1 = "전자기기";
-                    adspin2 = ArrayAdapter.createFromResource(SecondhandWritingActivity.this, R.array.eletronicEq, android.R.layout.simple_spinner_dropdown_item);
+                    adspin2 = ArrayAdapter.createFromResource(SecondhandWritingActivity.this, R.array.electronicEq, android.R.layout.simple_spinner_dropdown_item);
                     adspin2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                     spinCategory2.setAdapter(adspin2);
                     spinCategory2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

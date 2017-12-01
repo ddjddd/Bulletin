@@ -12,7 +12,7 @@
         <item>옷장</item>
         <item>기타</item>
     </string-array>
-    <string-array name="eletronicEq">
+    <string-array name="electronicEq">
         <item>선풍기</item>
         <item>난방기기</item>
         <item>스탠드</item>
