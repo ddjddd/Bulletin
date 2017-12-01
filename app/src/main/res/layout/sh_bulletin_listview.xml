@@ -7,16 +7,16 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
             android:id="@+id/imageView1"
+            android:layout_width="44dp"
+            android:layout_height="96dp"
             android:layout_weight="1" />
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="4">
+            android:layout_height="97dp"
+            android:layout_weight="4"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/postTitle"
@@ -29,33 +29,37 @@
                 android:textSize="20dp" />
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="New Text"
                 android:id="@+id/postMemo"
-                android:textSize="15dp"
-                android:textColor="#666666"
-                android:layout_weight="1" />
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:layout_weight="1"
+                android:text="New Text"
+                android:textColor="#444444"
+                android:textSize="15dp"  />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="102dp"
+                android:layout_height="20dp"
                 android:layout_weight="2"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/postDate"
                     android:layout_width="wrap_content"
-                    android:layout_height="172dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="TextView" />
+                    android:text="TextView"
+                    android:textColor="#666666"
+                    android:textSize="12dp"  />
 
                 <TextView
                     android:id="@+id/postWriter"
                     android:layout_width="wrap_content"
-                    android:layout_height="172dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="TextView" />
+                    android:text="TextView"
+                    android:textColor="#666666"
+                    android:textSize="12dp"/>
             </LinearLayout>
 
         </LinearLayout>
