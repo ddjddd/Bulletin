@@ -10,21 +10,22 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 /**
- * Created by ddjdd on 2017-11-25.
+ * 커스텀 리스트 뷰 어댑터 클래스
  */
 
 public class CustomListViewAdapter extends BaseAdapter {
     private ArrayList<CustomListView> CustomListViewItemList = new ArrayList<CustomListView>();
 
-    public CustomListViewAdapter() {
+    // 빈 생성자
+    public CustomListViewAdapter() { }
 
-    }
-
+    // 만든 리스트의 개체수
     @Override
     public int getCount() {
         return CustomListViewItemList.size();
     }
 
+    //
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         final int pos = position;
@@ -35,34 +36,44 @@ public class CustomListViewAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.sh_bulletin_listview, parent, false);
         }
 
-        TextView titleTextView = (TextView) convertView.findViewById(R.id.textView1);
-        TextView descTextView = (TextView) convertView.findViewById(R.id.textView2);
+        // xml 링크
+        TextView titleTextView = (TextView) convertView.findViewById(R.id.postTitle);
+        TextView memoTextView = (TextView) convertView.findViewById(R.id.postMemo);
+        TextView dateTextView = (TextView) convertView.findViewById(R.id.postDate);
+        TextView writerTextView= (TextView) convertView.findViewById(R.id.postWriter);
 
+        //
         CustomListView CustomListViewItem = CustomListViewItemList.get(position);
 
         titleTextView.setText(CustomListViewItem.getTitle());
-        descTextView.setText(CustomListViewItem.getDesc());
+        memoTextView.setText(CustomListViewItem.getMemo());
+        dateTextView.setText(CustomListViewItem.getDate());
+        writerTextView.setText(CustomListViewItem.getWriter());
 
         return convertView;
     }
 
+    //
     @Override
     public long getItemId(int position) {
         return position ;
     }
 
+    //
     @Override
     public Object getItem(int position) {
         return CustomListViewItemList.get(position) ;
     }
 
-    //   public void addItem(Drawable icon, String title, String desc) {
-    public void addItem(String title, String desc) {
+    // 리스트에 새로운 글 추가
+    public void addItem(String title, String memo, String date, String writer) {
         CustomListView item = new CustomListView();
 
         // item.setIcon(icon);
         item.setTitle(title);
-        item.setDesc(desc);
+        item.setMemo(memo);
+        item.setDate(date);
+        item.setWriter(writer);
 
         CustomListViewItemList.add(item);
     }
