@@ -47,8 +47,9 @@ public class ProfileActivity extends AppCompatActivity {
         //editSearch = (EditText) findViewById(R.id.editSearch);
         //listView = (ListView) findViewById(R.id.listview);
 
+        // profile.xml 파일의 각각의 버튼마다 android:id="@+id/pf_next" 부분의 pf_next 같은 id를 직접 지정해 주어야 함.....
         // 이하 xx
-        profile_next = (Button) findViewById(R.id.pf_next);
+        profile_next = (Button) findViewById(R.id.secondhand);
         profile_next.setOnClickListener(new View.OnClickListener() {
 
             @Override
