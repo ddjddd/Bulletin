@@ -18,26 +18,50 @@ import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 
+/**
+ * 메인 로그인 화면
+ */
+
 public class MainActivity extends AppCompatActivity {
-    private Button user_secondhand;
+    private EditText editUserID, editUserPW;
+    private Button user_signIn, user_signUp;
+
+    // 입력된 ID, PW
+    private String userID, userPW;
 
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        user_secondhand = (Button) findViewById(R.id.user_secondhand);
 
-        user_secondhand.setOnClickListener(new View.OnClickListener() {
+        // xml 링크
+        editUserID = (EditText) findViewById(R.id.editUserID);
+        editUserPW = (EditText) findViewById(R.id.editUserPW);
+        user_signIn = (Button) findViewById(R.id.user_signIn);
+        user_signUp = (Button) findViewById(R.id.user_signUp);
+
+        // 로그인
+        user_signIn= (Button) findViewById(R.id.user_signIn);
+        user_signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                // 프로필 페이지로 이동
                 Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
                 startActivity(intent);
             }
         });
+
+        // 회원가입
+        user_signUp= (Button) findViewById(R.id.user_signUp);
+        user_signUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 회원가입 페이지로 이동
+            }
+        });
+
     }
 }

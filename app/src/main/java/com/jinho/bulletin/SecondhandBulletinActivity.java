@@ -35,6 +35,7 @@ public class SecondhandBulletinActivity extends AppCompatActivity {
         sh_bulletin_write.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // writing activity
                 Intent intent = new Intent(getApplicationContext(), SecondhandWritingActivity.class);
                 startActivity(intent);
             }
@@ -45,7 +46,7 @@ public class SecondhandBulletinActivity extends AppCompatActivity {
     private void showChatList() {
         final CustomListViewAdapter adapter =  new CustomListViewAdapter() ;
 
-        adapter.addItem("<팜> 라면포트", "$5000~");      // example
+        adapter.addItem("<팜> 라면포트", "$5000~", "17. 12. 1", "ddjddd");      // example
 
         sh_postList.setAdapter(adapter);
 
@@ -53,30 +54,20 @@ public class SecondhandBulletinActivity extends AppCompatActivity {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 post newPost = dataSnapshot.getValue(post.class);
-                adapter.addItem(newPost.getTitle(), newPost.getDateTime());
+             //   adapter.addItem(newPost.getTitle(), newPost.getMemo(), newPost.getDateTime(),Integer.toString(newPost.getWriterID()));
             }
 
             @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-            }
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) { }
 
             @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
+            public void onChildRemoved(DataSnapshot dataSnapshot) { }
 
             @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) { }
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
+            public void onCancelled(DatabaseError databaseError) { }
         });
-
     }
-
 }
