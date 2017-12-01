@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 
 public class CustomListViewAdapter extends BaseAdapter {
-    private ArrayList<CustomListView> CustomListViewItemList = new ArrayList<CustomListView>();
+    private ArrayList<SecondhandPost> shPostItemList = new ArrayList<>();
 
     // 빈 생성자
     public CustomListViewAdapter() { }
@@ -22,7 +22,7 @@ public class CustomListViewAdapter extends BaseAdapter {
     // 만든 리스트의 개체수
     @Override
     public int getCount() {
-        return CustomListViewItemList.size();
+        return shPostItemList.size();
     }
 
     //
@@ -40,15 +40,15 @@ public class CustomListViewAdapter extends BaseAdapter {
         TextView titleTextView = (TextView) convertView.findViewById(R.id.postTitle);
         TextView memoTextView = (TextView) convertView.findViewById(R.id.postMemo);
         TextView dateTextView = (TextView) convertView.findViewById(R.id.postDate);
-        TextView writerTextView= (TextView) convertView.findViewById(R.id.postWriter);
+     //   TextView writerTextView= (TextView) convertView.findViewById(R.id.postWriter);
 
         //
-        CustomListView CustomListViewItem = CustomListViewItemList.get(position);
+        SecondhandPost ShPostItem = shPostItemList.get(pos);
 
-        titleTextView.setText(CustomListViewItem.getTitle());
-        memoTextView.setText(CustomListViewItem.getMemo());
-        dateTextView.setText(CustomListViewItem.getDate());
-        writerTextView.setText(CustomListViewItem.getWriter());
+        titleTextView.setText(ShPostItem.getTitle());
+        memoTextView.setText(ShPostItem.getMemo());
+        dateTextView.setText(ShPostItem.getDateTime());
+   //     writerTextView.setText(SecondhandPostItem.getWriterID());
 
         return convertView;
     }
@@ -62,19 +62,11 @@ public class CustomListViewAdapter extends BaseAdapter {
     //
     @Override
     public Object getItem(int position) {
-        return CustomListViewItemList.get(position) ;
+        return shPostItemList.get(position) ;
     }
 
     // 리스트에 새로운 글 추가
-    public void addItem(String title, String memo, String date, String writer) {
-        CustomListView item = new CustomListView();
-
-        // item.setIcon(icon);
-        item.setTitle(title);
-        item.setMemo(memo);
-        item.setDate(date);
-        item.setWriter(writer);
-
-        CustomListViewItemList.add(item);
+     public void addItem(SecondhandPost item) {
+         shPostItemList.add(item);
     }
 }
