@@ -3,13 +3,15 @@ package com.jinho.bulletin;
 import android.graphics.drawable.Drawable;
 
 /**
- * Created by ddjdd on 2017-11-25.
+ *  커스텀 리스트뷰 클래스
  */
 
 public class CustomListView {
     //    private Drawable iconDrawable ;
     private String titleStr;
-    private String descStr;
+    private String memoStr;
+    private String dateStr;
+    private String writerStr;
 
     /*
         public void setIcon(Drawable icon) {
@@ -19,9 +21,11 @@ public class CustomListView {
         titleStr = title;
     }
 
-    public void setDesc(String desc) {
-        descStr = desc;
-    }
+    public void setMemo(String memo) { memoStr = memo; }
+
+    public void setDate(String date) {dateStr = date; }
+
+    public void setWriter(String writer) {writerStr = writer; }
 
     /*
         public Drawable getIcon() {
@@ -31,7 +35,11 @@ public class CustomListView {
         return this.titleStr;
     }
 
-    public String getDesc() {
-        return this.descStr;
+    public String getMemo() {
+        return this.memoStr;
     }
+
+    public String getDate() { return this.dateStr; }
+
+    public String getWriter() { return this.writerStr; }
 }

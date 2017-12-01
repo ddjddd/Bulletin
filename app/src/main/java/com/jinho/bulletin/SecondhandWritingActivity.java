@@ -150,9 +150,14 @@ public class SecondhandWritingActivity extends AppCompatActivity {
                     memo = editMemo.getText().toString();
 
                     if(!title.equals("") && !category1.equals("") && !category2.equals("") && !price.equals("") && !condition.equals("") && !location.equals("") && !memo.equals("")){
+                        //UserID 만들기
+                        //DB에서 글 개수 가져오기
+                        //글 개수 +1 update
+                        //comment 개수 가져오기
                         //객체 만들기
-                        //firebase에 넘겨주기
-                        //게시판으로 넘어가기
+                        //SecondhandPost posting = new SecondhandPost()
+                        //객체 DB넘기기
+                        //프로필로 넘어가기
                     }
                     else{
                         Toast.makeText(SecondhandWritingActivity.this, "다 입력해주세요",Toast.LENGTH_SHORT).show();
