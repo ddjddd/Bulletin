@@ -50,13 +50,13 @@
             android:textColor="#222222"
             android:textSize="18dp"/>
 
-        <TextView
+        <Spinner
             android:id="@+id/postCategory1"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1" />
 
-        <TextView
+        <Spinner
             android:id="@+id/postCategory2"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -101,11 +101,12 @@
             android:textColor="#222222"
             android:textSize="18dp"/>
 
-        <TextView
+        <Spinner
             android:id="@+id/postCondition"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:entries="@array/condition"/>
     </LinearLayout>
 
     <LinearLayout
@@ -123,11 +124,12 @@
             android:textColor="#222222"
             android:textSize="18dp"/>
 
-        <TextView
+        <Spinner
             android:id="@+id/postLocation"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:entries="@array/location"/>
     </LinearLayout>
 
     <LinearLayout
