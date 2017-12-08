@@ -29,14 +29,19 @@
                 android:layout_margin="10dp"
                 android:text="Profile"
                 android:textAlignment="center"
-                android:textSize="20sp" />
+                android:textSize="50sp" />
 
-            <Button
+            <TextView
                 android:id="@+id/pf_next"
-                android:layout_width="169dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Mission List" />
+                android:text="Mission List" /> //글 목록이 이 아래 뜨도록 해야한다 만드는중
 
+            <ListView
+                android:id="@+id/list"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:text="" />
 
             <EditText
                 android:id="@+id/search_bar"
@@ -46,14 +51,15 @@
                 android:imeOptions="actionSearch"/>
 
             <Button
+                android:id="@+id/secondhandwriting"
                 android:layout_width="169dp"
                 android:layout_height="wrap_content"
-                android:text="-" />
+                android:text="글쓰기버튼으로링크" />
 
         </LinearLayout>
 
         <Button
-            android:id="@+id/secondhand"
+            android:id="@+id/btnNewActivity"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"

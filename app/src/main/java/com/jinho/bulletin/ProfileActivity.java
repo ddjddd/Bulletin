@@ -29,6 +29,8 @@ public class ProfileActivity extends AppCompatActivity {
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
 
+    // 부터
+
 
     private Button Misson, Next, Secondhand;
     private EditText Search;
@@ -43,6 +45,14 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile);
+
+        Button btnNewActivity = (Button) findViewById(R.id.btnNewActivity);
+        btnNewActivity.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), SecondhandWritingActivity.class); //글쓰는창으로 이동. 이 액티비티 맞는지
+                startActivity(intent);
+            }
+         });
 
         //editSearch = (EditText) findViewById(R.id.editSearch);
         //listView = (ListView) findViewById(R.id.listview);
@@ -59,7 +69,7 @@ public class ProfileActivity extends AppCompatActivity {
             }
 
         });
-        // xx
+        // xx xx
 
 
     }
