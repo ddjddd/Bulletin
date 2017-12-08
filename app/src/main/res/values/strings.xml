@@ -23,4 +23,17 @@
         <item>문학서적</item>
         <item>만화책</item>
     </string-array>
+    <string-array name="condition">
+        <item>새제품</item>
+        <item>좋음</item>
+        <item>사용감 있음</item>
+        <item>골동품</item>
+    </string-array>
+    <string-array name="location">
+        <item>학관</item>
+        <item>후문</item>
+        <item>쪽문</item>
+        <item>북문</item>
+        <item>반도체관</item>
+    </string-array>
 </resources>

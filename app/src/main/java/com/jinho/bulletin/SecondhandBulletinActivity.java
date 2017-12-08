@@ -56,9 +56,9 @@ public class SecondhandBulletinActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(getApplicationContext(), SecondhandPostActivity.class);
                 // putExtra의 첫 값은 식별 태그, 뒤에는 다음 화면에 넘길 값
-                intent.putExtra("IDSecond", newPost.getIDSecond());
+                //intent.putExtra("IDSecond", newPost.getIDSecond());
                 intent.putExtra("writerID", newPost.getWriterID());
-                intent.putExtra("commentID", newPost.getCommentID());
+                //intent.putExtra("commentID", newPost.getCommentID());
 
                 intent.putExtra("IsFinished", newPost.isFinish());
 
@@ -84,8 +84,8 @@ public class SecondhandBulletinActivity extends AppCompatActivity {
         sh_postList.setAdapter(adapter);
 
         // sample
-        SecondhandPost example = new SecondhandPost(1,1,1, true,
-                "17.12.02", "<팜>역전우동", "$200", "개비싸게 산다", "식품", "점심", "최상", "율전성당 앞");
+        SecondhandPost example = new SecondhandPost("1", true,
+                "2017-12-02-00-00", "<팜>역전우동", "$200", "개비싸게 산다", "식품", "점심", "최상", "율전성당 앞");
 
         adapter.addItem(example);
         databaseReference.child("SecondhandPost").addChildEventListener(new ChildEventListener() {
