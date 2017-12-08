@@ -35,7 +35,7 @@
                 android:id="@+id/pf_next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Mission List" /> //글 목록이 이 아래 뜨도록 해야한다 만드는중
+                android:text="Mission List" />
 
             <ListView
                 android:id="@+id/list"
