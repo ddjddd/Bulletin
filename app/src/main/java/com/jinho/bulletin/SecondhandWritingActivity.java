@@ -159,6 +159,23 @@ public class SecondhandWritingActivity extends AppCompatActivity {
                     if(!title.equals("") && !category1.equals("") && !category2.equals("") && !price.equals("") && !condition.equals("") && !location.equals("") && !memo.equals("")){
                         //UserID 만들기
                         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                        //잠시 테스트용소스
+                        //글id는 push를 사용하여 만들 수 있다
+                        String postKey = databaseReference.push().getKey();
+                        //객체 만들기
+                        String userID = "11111111";
+                        //현재 시간 가져오기
+                        Date date = new Date();
+                        SimpleDateFormat full_sdf = new SimpleDateFormat("yyyy-MM-dd-hh-mm-ss");
+                        String dateTime = full_sdf.format(date).toString();
+                        //post객체 생성
+                        SecondhandPost posting = new SecondhandPost(userID, false, dateTime, title, price, memo, category1,category2, condition, location);
+                        //객체 DB넘기기
+                        databaseReference.child("secondhandPost").setValue(posting);
+                        //프로필로 넘어가기
+                        Toast.makeText(SecondhandWritingActivity.this, "입력완료",Toast.LENGTH_SHORT).show();
+                        finish();
+                        /*
                         if(user != null){
                             //글id는 push를 사용하여 만들 수 있다
                             String postKey = databaseReference.push().getKey();
@@ -180,6 +197,7 @@ public class SecondhandWritingActivity extends AppCompatActivity {
                             //또는 뒤로가기
                             finish();
                         }
+                        */
                     }
                     else{
                         Toast.makeText(SecondhandWritingActivity.this, "다 입력해주세요",Toast.LENGTH_SHORT).show();
