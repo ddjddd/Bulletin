@@ -5,9 +5,9 @@ package com.jinho.bulletin;
  */
 
 public class SecondhandPost {
-    private int IDSecond;
-    private int writerID;
-    private int commentID;
+    //private int IDSecond;
+    private String writerID;
+    //private String commentID;
     private boolean IsFinish;
     private String dateTime, title, price, memo, category1, category2, condition, location;
 
@@ -27,10 +27,9 @@ public class SecondhandPost {
     //constructor
     public SecondhandPost() {
     }
-    public SecondhandPost(int IDSecond, int writerID, int commentID, boolean isFinish, String dateTime, String title, String price, String memo, String category1, String category2, String condition, String location) {
-        this.IDSecond = IDSecond;
+    public SecondhandPost( String writerID, boolean isFinish, String dateTime, String title, String price, String memo, String category1, String category2, String condition, String location) {
+        //this.IDSecond = IDSecond;
         this.writerID = writerID;
-        this.commentID = commentID;
         IsFinish = isFinish;
         this.dateTime = dateTime;
         this.title = title;
@@ -42,28 +41,13 @@ public class SecondhandPost {
         this.location = location;
     }
 
-    public int getIDSecond() {
-        return IDSecond;
-    }
 
-    public void setIDSecond(int IDSecond) {
-        this.IDSecond = IDSecond;
-    }
-
-    public int getWriterID() {
+    public String getWriterID() {
         return writerID;
     }
 
-    public void setWriterID(int writerID) {
+    public void setWriterID(String writerID) {
         this.writerID = writerID;
-    }
-
-    public int getCommentID() {
-        return commentID;
-    }
-
-    public void setCommentID(int commentID) {
-        this.commentID = commentID;
     }
 
     public boolean isFinish() {
@@ -140,96 +124,3 @@ public class SecondhandPost {
 
 }
 
-/*
-
-public class post {
-    private int ID;
-    private int writerID;
-    private String title;
-    private String dateTime;
-    private boolean IsFinish;
-    private int commentID;
-    private int contentID;
-
-    public void delete (){
-        //delete this post
-    }
-    public void change () {
-        // change this post
-    }
-    public void report () {
-        //report this writer to manager
-    }
-
-    //Constructors
-    public post() {
-    }
-    public post(int ID, int writerID, String title, String dateTime, boolean isFinish, int commentID, int contentID) {
-        this.ID = ID;
-        this.writerID = writerID;
-        this.title = title;
-        this.dateTime = dateTime;
-        IsFinish = isFinish;
-        this.commentID = commentID;
-        this.contentID = contentID;
-    }
-
-    //Getter&Setter
-    public int getID() {
-        return ID;
-    }
-
-    public void setID(int ID) {
-        this.ID = ID;
-    }
-
-    public int getWriterID() {
-        return writerID;
-    }
-
-    public void setWriterID(int writerID) {
-        this.writerID = writerID;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDateTime() {
-        return dateTime;
-    }
-
-    public void setDateTime(String dateTime) {
-        this.dateTime = dateTime;
-    }
-
-    public boolean isFinish() {
-        return IsFinish;
-    }
-
-    public void setFinish(boolean finish) {
-        IsFinish = finish;
-    }
-
-    public int getCommentID() {
-        return commentID;
-    }
-
-    public void setCommentID(int commentID) {
-        this.commentID = commentID;
-    }
-
-    public int getcontentID() {
-        return contentID;
-    }
-
-    public void setcontentID(int contentID) {
-        this.contentID = contentID;
-    }
-}
-
- */

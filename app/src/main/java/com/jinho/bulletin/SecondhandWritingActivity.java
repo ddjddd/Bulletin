@@ -14,11 +14,17 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthException;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /*
   Secondhand - products bulletin board Activity
@@ -34,6 +40,7 @@ public class SecondhandWritingActivity extends AppCompatActivity {
 
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
     private String title, price, memo, category1, category2, condition, location;
 
@@ -151,13 +158,28 @@ public class SecondhandWritingActivity extends AppCompatActivity {
 
                     if(!title.equals("") && !category1.equals("") && !category2.equals("") && !price.equals("") && !condition.equals("") && !location.equals("") && !memo.equals("")){
                         //UserID 만들기
-                        //DB에서 글 개수 가져오기
-                        //글 개수 +1 update
-                        //comment 개수 가져오기
-                        //객체 만들기
-                        //SecondhandPost posting = new SecondhandPost()
-                        //객체 DB넘기기
-                        //프로필로 넘어가기
+                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                        if(user != null){
+                            //글id는 push를 사용하여 만들 수 있다
+                            String postKey = databaseReference.push().getKey();
+                            //객체 만들기
+                            String userID = user.getUid();
+                            //현재 시간 가져오기
+                            Date date = new Date();
+                            SimpleDateFormat full_sdf = new SimpleDateFormat("yyyy-MM-dd-hh-mm-ss");
+                            String dateTime = full_sdf.format(date).toString();
+                            //post객체 생성
+                            SecondhandPost posting = new SecondhandPost(userID, false, dateTime, title, price, memo, category1,category2, condition, location);
+                            //객체 DB넘기기
+                            databaseReference.child("secondhandPost").setValue(posting);
+                            //프로필로 넘어가기
+                            finish();
+                        }
+                        else{
+                            Toast.makeText(SecondhandWritingActivity.this, "로그인을 해주세요",Toast.LENGTH_SHORT).show();
+                            //또는 뒤로가기
+                            finish();
+                        }
                     }
                     else{
                         Toast.makeText(SecondhandWritingActivity.this, "다 입력해주세요",Toast.LENGTH_SHORT).show();
