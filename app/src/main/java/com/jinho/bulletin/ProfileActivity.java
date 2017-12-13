@@ -46,7 +46,7 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile);
 
-        Button btnNewActivity = (Button) findViewById(R.id.btnNewActivity);
+        Button btnNewActivity = (Button) findViewById(R.id.secondhandwriting);
         btnNewActivity.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), SecondhandWritingActivity.class); //글쓰는창으로 이동. 이 액티비티 맞는지
