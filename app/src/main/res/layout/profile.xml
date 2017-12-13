@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.weet.weet.StartActivity"
     tools:layout_editor_absoluteY="81dp"
     tools:layout_editor_absoluteX="0dp">
 
@@ -59,7 +58,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/btnNewActivity"
+            android:id="@+id/secondhand"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
