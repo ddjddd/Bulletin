@@ -5,6 +5,7 @@ package com.jinho.bulletin;
  */
 
 public class SecondhandPost {
+    private String postKey;
     //private int IDSecond;
     private String writerID;
     //private String commentID;
@@ -27,8 +28,8 @@ public class SecondhandPost {
     //constructor
     public SecondhandPost() {
     }
-    public SecondhandPost( String writerID, boolean isFinish, String dateTime, String title, String price, String memo, String category1, String category2, String condition, String location) {
-        //this.IDSecond = IDSecond;
+    public SecondhandPost(String postKey, String writerID, boolean isFinish, String dateTime, String title, String price, String memo, String category1, String category2, String condition, String location) {
+        this.postKey = postKey;
         this.writerID = writerID;
         IsFinish = isFinish;
         this.dateTime = dateTime;
@@ -41,6 +42,13 @@ public class SecondhandPost {
         this.location = location;
     }
 
+    public String getPostKey() {
+        return postKey;
+    }
+
+    public void setPostKey(String postKey) {
+        this.postKey = postKey;
+    }
 
     public String getWriterID() {
         return writerID;

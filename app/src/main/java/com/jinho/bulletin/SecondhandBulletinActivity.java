@@ -84,7 +84,7 @@ public class SecondhandBulletinActivity extends AppCompatActivity {
         sh_postList.setAdapter(adapter);
 
         // sample
-        SecondhandPost example = new SecondhandPost("1", true,
+        SecondhandPost example = new SecondhandPost("00000","1", true,
                 "2017-12-02-00-00", "<팜>역전우동", "$200", "개비싸게 산다", "식품", "점심", "최상", "율전성당 앞");
 
         adapter.addItem(example);

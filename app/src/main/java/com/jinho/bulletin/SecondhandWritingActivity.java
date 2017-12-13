@@ -33,6 +33,8 @@ public class SecondhandWritingActivity extends AppCompatActivity {
 
     ArrayAdapter<CharSequence> adspin1;
     ArrayAdapter<CharSequence> adspin2;
+    ArrayAdapter<CharSequence> adspin3;
+    ArrayAdapter<CharSequence> adspin4;
 
     private Button buttonFinish;
     private EditText editTitle, editPrice, editMemo;
@@ -124,28 +126,32 @@ public class SecondhandWritingActivity extends AppCompatActivity {
                     category1 = "";
             }
         });
-
+        adspin3 = ArrayAdapter.createFromResource(this, R.array.condition,android.R.layout.simple_spinner_dropdown_item);
+        adspin3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinCondition.setAdapter(adspin3);
         spinCondition.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                condition = spinCondition.getItemAtPosition(position).toString();
+                condition = adspin3.getItem(position).toString();
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                condition = "";
+                condition="";
             }
         });
-
+        adspin4 = ArrayAdapter.createFromResource(this, R.array.location,android.R.layout.simple_spinner_dropdown_item);
+        adspin4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinLocation.setAdapter(adspin4);
         spinLocation.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                location = spinLocation.getItemAtPosition(position).toString();
+                location = adspin4.getItem(position).toString();
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                location = "";
+                location ="";
             }
         });
 
@@ -156,40 +162,26 @@ public class SecondhandWritingActivity extends AppCompatActivity {
                     price = editPrice.getText().toString();
                     memo = editMemo.getText().toString();
 
+
                     if(!title.equals("") && !category1.equals("") && !category2.equals("") && !price.equals("") && !condition.equals("") && !location.equals("") && !memo.equals("")){
-                        //UserID 만들기
+                        //UserID 가져오기
                         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                        //잠시 테스트용소스
-                        //글id는 push를 사용하여 만들 수 있다
-                        String postKey = databaseReference.push().getKey();
-                        //객체 만들기
-                        String userID = "11111111";
-                        //현재 시간 가져오기
-                        Date date = new Date();
-                        SimpleDateFormat full_sdf = new SimpleDateFormat("yyyy-MM-dd-hh-mm-ss");
-                        String dateTime = full_sdf.format(date).toString();
-                        //post객체 생성
-                        SecondhandPost posting = new SecondhandPost(userID, false, dateTime, title, price, memo, category1,category2, condition, location);
-                        //객체 DB넘기기
-                        databaseReference.child("secondhandPost").setValue(posting);
-                        //프로필로 넘어가기
-                        Toast.makeText(SecondhandWritingActivity.this, "입력완료",Toast.LENGTH_SHORT).show();
-                        finish();
-                        /*
+
                         if(user != null){
                             //글id는 push를 사용하여 만들 수 있다
                             String postKey = databaseReference.push().getKey();
-                            //객체 만들기
-                            String userID = user.getUid();
+                            //임시 userID
+                            String userID = "11111111";
+                            //String userID = user.getUid();
                             //현재 시간 가져오기
                             Date date = new Date();
-                            SimpleDateFormat full_sdf = new SimpleDateFormat("yyyy-MM-dd-hh-mm-ss");
+                            SimpleDateFormat full_sdf = new SimpleDateFormat("yy-MM-dd-hh-mm-ss");
                             String dateTime = full_sdf.format(date).toString();
                             //post객체 생성
-                            SecondhandPost posting = new SecondhandPost(userID, false, dateTime, title, price, memo, category1,category2, condition, location);
-                            //객체 DB넘기기
-                            databaseReference.child("secondhandPost").setValue(posting);
+                            SecondhandPost posting = new SecondhandPost(postKey, userID, false, dateTime, title, price, memo, category1,category2, condition, location);               //객체 DB넘기기
+                            databaseReference.child("secondhandPost").push().setValue(posting);
                             //프로필로 넘어가기
+                            Toast.makeText(SecondhandWritingActivity.this, "입력완료",Toast.LENGTH_SHORT).show();
                             finish();
                         }
                         else{
@@ -197,11 +189,12 @@ public class SecondhandWritingActivity extends AppCompatActivity {
                             //또는 뒤로가기
                             finish();
                         }
-                        */
+
                     }
                     else{
                         Toast.makeText(SecondhandWritingActivity.this, "다 입력해주세요",Toast.LENGTH_SHORT).show();
                     }
+
             }
         });
     }
