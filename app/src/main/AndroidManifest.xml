@@ -3,6 +3,7 @@
     package="com.jinho.bulletin">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,22 +18,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ProfileActivity"
-            android:label="Profile">
-        </activity>
-
+            android:label="Profile"></activity>
         <activity
             android:name=".SecondhandBulletinActivity"
-            android:label="@string/title_activity_secondhand_bulletin">
-        </activity>
-
+            android:label="@string/title_activity_secondhand_bulletin"></activity>
         <activity
             android:name=".SecondhandWritingActivity"
-            android:label="Write">
-        </activity>
-
+            android:label="Write"></activity>
+        <activity android:name=".secondhandShowPost"></activity>
     </application>
 
 </manifest>
