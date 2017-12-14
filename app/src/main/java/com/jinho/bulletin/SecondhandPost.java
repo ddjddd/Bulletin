@@ -31,6 +31,7 @@ public class SecondhandPost {
     public SecondhandPost(String postKey, String writerID, boolean isFinish, String dateTime, String title, String price, String memo, String category1, String category2, String condition, String location) {
         this.postKey = postKey;
         this.writerID = writerID;
+
         IsFinish = isFinish;
         this.dateTime = dateTime;
         this.title = title;

@@ -27,7 +27,6 @@
         <activity
             android:name=".SecondhandWritingActivity"
             android:label="Write"></activity>
-        <activity android:name=".secondhandShowPost"></activity>
     </application>
 
 </manifest>
