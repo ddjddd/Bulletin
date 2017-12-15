@@ -15,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class SecondhandPostActivity  extends AppCompatActivity {
     private Intent intent;
-    private TextView postTitle, postCategory1, postCategory2, postPrice, postCondition, postLocation, postMemo;
+    private TextView postCategory1, postCategory2, postPrice, postCondition, postLocation, postMemo;
     private Button returnBulletin;
 
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
@@ -28,22 +28,25 @@ public class SecondhandPostActivity  extends AppCompatActivity {
 
         intent = getIntent();
 
+        /*
         // xml 링크
         postTitle = (TextView) findViewById(R.id.postTitle);
-        postCategory1 = (TextView) findViewById(R.id.postCategory1);
-        postCategory2 = (TextView) findViewById(R.id.postCategory2);
-        postPrice = (TextView) findViewById(R.id.postPrice);
-        postCondition= (TextView) findViewById(R.id.postCondition);
-        postLocation = (TextView) findViewById(R.id.postLocation);
-        postMemo = (TextView) findViewById(R.id.postMemo);
+        postCategory1 = (TextView) findViewById(R.id.textView5);
+        postCategory2 = (TextView) findViewById(R.id.textView6);
+        postPrice = (TextView) findViewById(R.id.textView8);
+        postCondition= (TextView) findViewById(R.id.textView12);
+        postLocation = (TextView) findViewById(R.id.textView13);
+        postMemo = (TextView) findViewById(R.id.textView14);
+
 
         // intent의 값을 출력
-        postTitle.setText(intent.getStringExtra("title"));
+        //postTitle.setText(intent.getStringExtra("title"));
         postCategory1.setText(intent.getStringExtra("category1"));
         postCategory2.setText(intent.getStringExtra("category2"));
         postPrice.setText(intent.getStringExtra("price"));
         postCondition.setText(intent.getStringExtra("condition"));
         postLocation.setText(intent.getStringExtra("location"));
         postMemo.setText(intent.getStringExtra("memo"));
+        */
     }
 }

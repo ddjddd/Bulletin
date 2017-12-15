@@ -20,13 +20,13 @@
         </activity>
         <activity
             android:name=".ProfileActivity"
-            android:label="Profile"></activity>
+            android:label="Profile" />
         <activity
             android:name=".SecondhandBulletinActivity"
-            android:label="@string/title_activity_secondhand_bulletin"></activity>
+            android:label="@string/title_activity_secondhand_bulletin" />
         <activity
             android:name=".SecondhandWritingActivity"
-            android:label="Write"></activity>
+            android:label="Write" />
     </application>
 
 </manifest>

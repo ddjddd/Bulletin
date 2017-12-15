@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Bulletin</string>
     <string name="title_activity_secondhand_bulletin">중고거래게시판</string>
+
     <string-array name="category1">
         <item>가구</item>
         <item>전자기기</item>
@@ -36,4 +37,10 @@
         <item>북문</item>
         <item>반도체관</item>
     </string-array>
+    <string name="category1">분류1</string>
+    <string name="category2">분류2</string>
+    <string name="price">가격</string>
+    <string name="condition">상태</string>
+    <string name="location">장소</string>
+    <string name="memo">상세설명</string>
 </resources>
