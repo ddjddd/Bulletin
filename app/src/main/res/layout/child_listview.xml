@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:orientation="horizontal"
+        android:padding="3dp">
+
+        <TextView
+            android:layout_width="292dp"
+            android:layout_height="32dp"
+            android:paddingLeft="8dp"
+            android:gravity="center_vertical"
+            android:text="id" />
+        <ImageButton
+            android:id="@+id/commentEdit"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:padding="6dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/edit"
+            android:visibility="visible"
+            android:clickable="true"
+            android:focusable="true"/>
+        <ImageButton
+            android:id="@+id/commentDelete"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:padding="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/trash"
+            android:visibility="visible"
+            android:clickable="true"
+            android:focusable="true"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/commentText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        android:padding="5dp"
+        android:paddingLeft="8dp"
+        android:text="Child TextView" />
+    <TextView
+        android:id="@+id/commentDate"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:text="Date"/>
+</LinearLayout>
+
+

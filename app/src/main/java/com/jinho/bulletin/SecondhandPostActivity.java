@@ -28,16 +28,15 @@ public class SecondhandPostActivity  extends AppCompatActivity {
 
         intent = getIntent();
 
-        /*
+
         // xml 링크
-        postTitle = (TextView) findViewById(R.id.postTitle);
+        //postTitle = (TextView) findViewById(R.id.postTitle);
         postCategory1 = (TextView) findViewById(R.id.textView5);
         postCategory2 = (TextView) findViewById(R.id.textView6);
-        postPrice = (TextView) findViewById(R.id.textView8);
-        postCondition= (TextView) findViewById(R.id.textView12);
-        postLocation = (TextView) findViewById(R.id.textView13);
+        postPrice = (TextView) findViewById(R.id.textView7);
+        postCondition= (TextView) findViewById(R.id.textView9);
+        postLocation = (TextView) findViewById(R.id.textView11);
         postMemo = (TextView) findViewById(R.id.textView14);
-
 
         // intent의 값을 출력
         //postTitle.setText(intent.getStringExtra("title"));
@@ -47,6 +46,7 @@ public class SecondhandPostActivity  extends AppCompatActivity {
         postCondition.setText(intent.getStringExtra("condition"));
         postLocation.setText(intent.getStringExtra("location"));
         postMemo.setText(intent.getStringExtra("memo"));
-        */
+
+
     }
 }
