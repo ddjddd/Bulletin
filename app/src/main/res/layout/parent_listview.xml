@@ -11,7 +11,7 @@
         android:layout_height="32dp"
         android:layout_gravity="center"
         android:layout_marginLeft="16dp"
-        android:src="@drawable/down-arrow"/>
+        android:src="@drawable/down_arrow"/>
     <TextView
         android:id="@+id/parenttext"
         android:layout_width="match_parent"
