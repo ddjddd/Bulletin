@@ -127,7 +127,7 @@
 
     <Spinner
         android:id="@+id/spinLocation"
-        android:layout_width="256p"
+        android:layout_width="256dp"
         android:layout_height="30dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
