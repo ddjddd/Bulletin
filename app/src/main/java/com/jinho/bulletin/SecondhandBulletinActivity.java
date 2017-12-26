@@ -24,8 +24,6 @@ public class SecondhandBulletinActivity extends AppCompatActivity {
     private Button sh_bulletin_write;
     private ListView sh_postList;
 
- //   private SecondhandPost newPost;
-
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
 
@@ -61,7 +59,6 @@ public class SecondhandBulletinActivity extends AppCompatActivity {
                 //intent.putExtra("commentID", newPost.getCommentID());
 
                 intent.putExtra("IsFinished", newPost.isFinish());
-
                 intent.putExtra("title", newPost.getTitle());
                 intent.putExtra("dateTime", newPost.getDateTime());
                 intent.putExtra("price", newPost.getPrice());
@@ -77,10 +74,10 @@ public class SecondhandBulletinActivity extends AppCompatActivity {
             public void onClick(View v) { }
         });
 
-        showChatList();
+        showPostList();
     }
 
-    private void showChatList() {
+    private void showPostList() {
         sh_postList.setAdapter(adapter);
 
         // sample
