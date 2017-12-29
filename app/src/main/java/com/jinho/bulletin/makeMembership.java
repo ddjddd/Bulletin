@@ -36,8 +36,6 @@ public class makeMembership extends AppCompatActivity {
         registeer_membership.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(makeMembership.this, "Authentication success.",
-                        Toast.LENGTH_SHORT).show();
                 createUser(UserID.getText().toString(),UserPW.getText().toString());
             }
         });
