@@ -30,7 +30,7 @@
         <activity
             android:name=".SecondhandWritingActivity"
             android:label="Write" />
-
+        <activity android:name=".makeMembership"></activity>
     </application>
 
 </manifest>
