@@ -31,7 +31,7 @@ public class MessageboxActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.messagebox);
+        setContentView(R.layout.activity_messagebox);
 
         adapter =  new CustomListViewAdapter() ;
         mb_receive = (Button) findViewById(R.id.mb_receive);
@@ -63,10 +63,10 @@ public class MessageboxActivity extends AppCompatActivity {
 
                 Message currentMessage = (Message)adapter.getItem(position);
 
-                Intent intent = new Intent(getApplicationContext(), SecondhandPostActivity.class);
-                intent.putExtra("senderID", currentMessage.getSenderID());
+             //   Intent intent = new Intent(getApplicationContext(), SecondhandPostActivity.class);
+              //  intent.putExtra("senderID", currentMessage.getSenderID());
 
-                startActivity(intent);
+              //  startActivity(intent);
             }
 
             public void onClick(View v) { }
@@ -81,8 +81,8 @@ public class MessageboxActivity extends AppCompatActivity {
         databaseReference.child("Message").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                SecondhandPost newPost = dataSnapshot.getValue(SecondhandPost.class);
-                adapter.addItem(newPost);
+               // SecondhandPost newPost = dataSnapshot.getValue(SecondhandPost.class);
+            //    adapter.addItem(newPost);
             }
 
             @Override
