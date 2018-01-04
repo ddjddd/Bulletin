@@ -10,6 +10,7 @@ import android.widget.ListView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.jinho.bulletin.Message.MessageListActivity;
 
 import java.util.ArrayList;
 import java.util.List;
