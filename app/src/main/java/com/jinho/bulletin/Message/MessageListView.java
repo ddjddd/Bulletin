@@ -1,4 +1,4 @@
-package com.jinho.bulletin;
+package com.jinho.bulletin.Message;
 /**
  * Created by ddjdd on 2018-01-04.
  */

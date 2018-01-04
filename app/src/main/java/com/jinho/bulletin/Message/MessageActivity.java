@@ -1,4 +1,4 @@
-package com.jinho.bulletin;
+package com.jinho.bulletin.Message;
 
 import android.support.v7.app.AppCompatActivity;
 

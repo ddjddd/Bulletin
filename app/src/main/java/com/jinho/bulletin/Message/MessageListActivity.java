@@ -1,15 +1,12 @@
-package com.jinho.bulletin;
+package com.jinho.bulletin.Message;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
-import android.support.v7.widget.Toolbar;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 
 
 import com.google.firebase.database.ChildEventListener;
@@ -17,6 +14,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.jinho.bulletin.R;
 
 /**
  * Created by ddjdd on 2017-12-26.
