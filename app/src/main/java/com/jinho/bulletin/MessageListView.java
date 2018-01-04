@@ -3,7 +3,7 @@ package com.jinho.bulletin;
  * Created by ddjdd on 2018-01-04.
  */
 
-public class MessageboxListView {
+public class MessageListView {
     private String messageKey;
     private boolean IsFinish;
     private String senderIDStr, receiverIDStr;

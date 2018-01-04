@@ -14,11 +14,11 @@ import java.util.ArrayList;
  */
 
 
-public class MessageboxListViewAdapter extends BaseAdapter {
+public class MessageListViewAdapter extends BaseAdapter {
     private ArrayList<Message> messageItemList = new ArrayList<>();
 
     // 빈 생성자
-    public MessageboxListViewAdapter() { }
+    public MessageListViewAdapter() { }
 
     // 만든 리스트의 개체수
     @Override

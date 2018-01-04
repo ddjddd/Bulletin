@@ -45,7 +45,6 @@ public class Message {
     public boolean isFinish() {
         return IsFinish;
     }
-
     public void setFinish(boolean finish) {
         IsFinish = finish;
     }
@@ -55,7 +54,6 @@ public class Message {
     public String getSenderID() {
         return senderID;
     }
-
     public void setSenderID(String senderID) {
         this.senderID = senderID;
     }
@@ -63,7 +61,6 @@ public class Message {
     public String getReceiverID() {
         return receiverID;
     }
-
     public void setReceiverID(String receiverID) {
         this.receiverID = receiverID;
     }
@@ -72,7 +69,6 @@ public class Message {
     public String getTitle() {
         return title;
     }
-
     public void setTitle(String title) {
         this.title = title;
     }
@@ -80,7 +76,6 @@ public class Message {
     public String getDateTime() {
         return dateTime;
     }
-
     public void setDateTime(String dateTime) {
         this.dateTime = dateTime;
     }
@@ -88,7 +83,6 @@ public class Message {
     public String getMemo() {
         return memo;
     }
-
     public void setMemo(String memo) {
         this.memo = memo;
     }

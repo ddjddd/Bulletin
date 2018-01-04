@@ -18,25 +18,26 @@ import com.google.firebase.database.FirebaseDatabase;
  * Created by ddjdd on 2017-12-26.
  */
 
-public class MessageboxActivity extends AppCompatActivity {
+public class MessageListActivity extends AppCompatActivity {
 
-    private Button mb_receive, mb_new, mb_send;
+    private Button mb_receive, mb_new, mb_send, mb_write;
     private ListView mb_messageList;
 
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
 
-    CustomListViewAdapter adapter;
+    MessageListViewAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_messagebox);
+        setContentView(R.layout.activity_message_list);
 
-        adapter =  new CustomListViewAdapter() ;
+        adapter =  new MessageListViewAdapter() ;
         mb_receive = (Button) findViewById(R.id.mb_receive);
         mb_new = (Button) findViewById(R.id.mb_new);
         mb_send = (Button) findViewById(R.id.mb_send);
+        mb_write = (Button) findViewById(R.id.mb_write);
 
         mb_receive.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +58,17 @@ public class MessageboxActivity extends AppCompatActivity {
             }
         });
 
+        mb_write.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MessageWritingActivity.class);
+
+                startActivity(intent);
+            }
+        });
+
+        mb_messageList = (ListView) findViewById(R.id.mb_messageList);
+
         mb_messageList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
@@ -71,7 +83,6 @@ public class MessageboxActivity extends AppCompatActivity {
 
             public void onClick(View v) { }
         });
-
         showMessageList();
     }
 
