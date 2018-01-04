@@ -2,21 +2,14 @@ package com.jinho.bulletin;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +25,7 @@ public class ProfileActivity extends AppCompatActivity {
     // 부터
 
 
-    private Button Misson, Next, Secondhand;
+    private Button Misson, Next, Secondhand, messagebox;
     private EditText Search;
 
     private List<String> list;
@@ -71,6 +64,18 @@ public class ProfileActivity extends AppCompatActivity {
         });
         // xx xx
 
+
+        ////
+        messagebox = (Button) findViewById(R.id.messagebox);
+        messagebox.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MessageListActivity.class);
+                startActivity(intent);
+            }
+
+        });
 
     }
 
