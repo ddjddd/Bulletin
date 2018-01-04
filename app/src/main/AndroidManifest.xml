@@ -22,6 +22,15 @@
             android:name=".ProfileActivity"
             android:label="Profile" />
         <activity
+            android:name=".Message.MessageListActivity"
+            android:label="@string/title_activity_secondhand_bulletin" />
+        <activity
+            android:name=".Message.MessageActivity"
+            android:label="@string/title_activity_secondhand_bulletin" />
+        <activity
+            android:name=".Message.MessageWritingActivity"
+            android:label="@string/title_activity_secondhand_bulletin" />
+        <activity
             android:name=".SecondhandBulletinActivity"
             android:label="@string/title_activity_secondhand_bulletin" />
         <activity
@@ -30,7 +39,7 @@
         <activity
             android:name=".SecondhandWritingActivity"
             android:label="Write" />
-        <activity android:name=".makeMembership"></activity>
+        <activity android:name=".makeMembership" />
     </application>
 
 </manifest>
