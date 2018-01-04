@@ -1,6 +1,9 @@
 <resources>
-    <string name="app_name">Bulletin</string>
+    <string name="app_name">율전에서 살아남기</string>
     <string name="title_activity_secondhand_bulletin">중고거래게시판</string>
+    <string name="title_activity_messageList">메세지함</string>
+    <string name="title_activity_message">받은 메세지</string>
+    <string name="title_activity_messageWriting">메세지 작성</string>
 
     <string-array name="category1">
         <item>가구</item>
@@ -43,4 +46,5 @@
     <string name="condition">상태</string>
     <string name="location">장소</string>
     <string name="memo">상세설명</string>
+    <string name="title_activity_main2">Main2Activity</string>
 </resources>
