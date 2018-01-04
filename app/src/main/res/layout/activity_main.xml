@@ -15,20 +15,20 @@
         <EditText
             android:id="@+id/editUserID"
             android:layout_width="match_parent"
-            android:layout_height="296dp"
+            android:layout_height="160dp"
             android:layout_weight="1"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="UserID" />
+            android:hint="e-mail"
+            android:inputType="textEmailAddress" />
 
         <EditText
             android:id="@+id/editUserPW"
             android:layout_width="match_parent"
-            android:layout_height="279dp"
+            android:layout_height="160dp"
             android:layout_weight="1"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="UserPW" />
+            android:hint="passowrd"
+            android:inputType="textPassword" />
 
         <LinearLayout
             android:layout_width="match_parent"
