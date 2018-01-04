@@ -7,6 +7,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.support.v7.widget.Toolbar;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -33,19 +37,19 @@ public class MessageListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_message_list);
 
-        adapter =  new MessageListViewAdapter() ;
-        mb_receive = (Button) findViewById(R.id.mb_receive);
-        mb_new = (Button) findViewById(R.id.mb_new);
-        mb_send = (Button) findViewById(R.id.mb_send);
-        mb_write = (Button) findViewById(R.id.mb_write);
+        adapter =  new MessageListViewAdapter();
+       // mb_receive = (Button) findViewById(R.id.mb_receive);
+      //  mb_new = (Button) findViewById(R.id.mb_new);
+      //  mb_send = (Button) findViewById(R.id.mb_send);
+       // mb_write = (Button) findViewById(R.id.mb_write);
 
-        mb_receive.setOnClickListener(new View.OnClickListener() {
+     /*   mb_receive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // 받은 메세지 전부 정렬
             }
         });
-        mb_new.setOnClickListener(new View.OnClickListener() {
+       mb_new.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // 새로온 메세지만 정렬
@@ -56,17 +60,17 @@ public class MessageListActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // 보낸 메세지만 정렬
             }
-        });
+        });*/
 
+        FloatingActionButton mb_write = (FloatingActionButton) findViewById(R.id.mb_write);
         mb_write.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), MessageWritingActivity.class);
-
                 startActivity(intent);
             }
         });
-
+/*
         mb_messageList = (ListView) findViewById(R.id.mb_messageList);
 
         mb_messageList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -83,7 +87,7 @@ public class MessageListActivity extends AppCompatActivity {
 
             public void onClick(View v) { }
         });
-        showMessageList();
+        showMessageList();*/
     }
 
     private void showMessageList() {
@@ -92,8 +96,6 @@ public class MessageListActivity extends AppCompatActivity {
         databaseReference.child("Message").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-               // SecondhandPost newPost = dataSnapshot.getValue(SecondhandPost.class);
-            //    adapter.addItem(newPost);
             }
 
             @Override
