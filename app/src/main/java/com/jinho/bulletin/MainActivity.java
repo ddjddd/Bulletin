@@ -50,7 +50,23 @@ public class MainActivity extends AppCompatActivity {
         user_signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                signIn_User(editUserID.getText().toString(), editUserPW.getText().toString());
+                String getEdit1 = editUserID.getText().toString();
+                String getEdit2 = editUserPW.getText().toString();
+
+
+
+                //공백(스페이스바)만 눌러서 넘기는 경우도 안된다고 할때에는 아래코드도 살림
+
+                //getEdit = getEdit.trim();
+
+                if(getEdit1.getBytes().length <= 0 || getEdit2.getBytes().length <= 0 ){//빈값이 넘어올때의 처리
+
+                    Toast.makeText(MainActivity.this, "값을 입력하세요.", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    signIn_User(editUserID.getText().toString(), editUserPW.getText().toString());
+                }
+
             }
         });
 
@@ -69,6 +85,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void signIn_User(String email, String password) {
+        if(email==null||password==null){
+            Toast.makeText(MainActivity.this, "Authentication failed.",
+                    Toast.LENGTH_SHORT).show();
+            return;
+        }
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
